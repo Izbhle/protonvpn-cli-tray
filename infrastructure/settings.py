@@ -1,6 +1,7 @@
 import json
 import os
 
+
 class Settings(dict):
     def __init__(self, configFilePath):
         self.configFilePath = os.path.expanduser(configFilePath)
@@ -10,10 +11,10 @@ class Settings(dict):
             configFile.close()
         else:
             settings = {
-                'protocol': 'tcp', # tcp | upd
-                'serverConnectionType': '-f' # fastest | secureCore | peerToPeer | Tor
+                "protocol": "tcp",  # tcp | upd
+                "serverConnectionType": "-f",  # fastest | secureCore | peerToPeer | Tor
             }
-        super().__init__(settings)  
+        super().__init__(settings)
 
     def update(self, vals):
         super().update(vals)
